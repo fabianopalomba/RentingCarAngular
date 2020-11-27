@@ -1,0 +1,21 @@
+<div *ngIf="!BasicAuth.isLogged()">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+      <h3>Login Form</h3>
+      <div class="form-group">
+        <input type="text" class="form-control" id="userid" placeholder="Nome Utente" [(ngModel)]="userid">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="password">
+      </div>
+      <div class="form-group">
+        <button (click)="gestAuth()" class="btnSubmit">Connetti</button>
+      </div>
+      <div class="form-group">
+        <a href="/register" class="ForgetPwd">Registrati</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

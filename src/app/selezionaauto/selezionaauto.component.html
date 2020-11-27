@@ -1,0 +1,16 @@
+<div class="col-6-md" *ngIf="cars!=undefined">
+  <form [formGroup]="form">
+    <select formControlName="car" class="form-control">
+      <option *ngFor="let car of cars" [ngValue]="car">
+        {{ car.brand }} {{ car.model }}
+      </option>
+    </select>
+  </form>
+</div>
+<br>
+<div>
+  <h3>{{errore}}</h3>
+<div>
+  <button type="button" *ngIf="this.form.get('car').value !=null" (click) = "addRent(this.dateRange,this.form.get('car').value);" class="btn btn-primary">Aggiungi Noleggio</button>
+</div>
+

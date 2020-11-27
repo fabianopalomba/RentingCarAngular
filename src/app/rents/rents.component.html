@@ -1,0 +1,18 @@
+<h1>Rents</h1>
+
+<table id="rents" class="table">
+  <thead>
+  <tr class="table-light">
+    <th scope="col">Car</th>
+    <th scope="col">InitDate</th>
+    <th scope="col">FinDate</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let rent of rents" class="table-info">
+    <td>{{rent.car.brand}} {{rent.car.model}}</td>
+    <td>{{rent.initDate | date}}</td>
+    <td>{{rent.finDate | date}}</td>
+  </tr>
+  </tbody>
+</table>

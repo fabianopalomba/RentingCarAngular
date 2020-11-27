@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+          <h1>User</h1>
+      <div class="form-group" >
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName"
+               required [readonly]="onlyreaduser"
+               [(ngModel)]="user.firstName" name="firstName">
+      </div>
+
+      <div class="form-group" >
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName"
+               required [readonly]="onlyread"
+               [(ngModel)]="user.lastName" name="lastName">
+      </div>
+
+      <div class="form-group" >
+        <label for="phone">phone</label>
+        <input type="text" class="form-control" id="phone"
+               required [readonly]="onlyread"
+               [(ngModel)]="user.phone" name="phone">
+      </div>
+      <div class="form-group" >
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email"
+               required [readonly]="onlyread"
+               [(ngModel)]="user.email" name="email">
+      </div>
+      <div class="form-group" >
+        <label for="password">Password</label>
+        <input type="text" class="form-control" id="password"
+               required [readonly]="onlyread"
+               [(ngModel)]="user.password" name="password">
+      </div>
+      <a mat-raised-button *ngIf="onlyread" type="button" href="/editUser" class="btn btn-primary">Modifica i tuoi dati</a>
+      <button *ngIf="onlyread" type="button" (click)="deleteUser()" class="btn btn-danger">Elimina il tuo account</button>
+      <button *ngIf="!onlyread" type="button" (click) = "addUser(this.user.firstName,this.user.lastName,this.user.phone,this.user.email,this.user.password)" class="btn btn-primary">Inserisci Dati</button>
+
+      <div *ngIf="onlyread">
+      <app-rents></app-rents>
+      </div>
+    </div>
+  </div>
+</div>
